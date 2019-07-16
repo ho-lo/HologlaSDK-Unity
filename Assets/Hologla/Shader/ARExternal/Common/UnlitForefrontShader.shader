@@ -1,4 +1,6 @@
-﻿// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
+﻿/*====================================================================================================
+// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
+====================================================================================================*/
 
 Shader "Hologla/UnlitForefrontShader"
 {
@@ -41,6 +43,7 @@ Shader "Hologla/UnlitForefrontShader"
 			Cull Off
 			Lighting Off
 			ZWrite Off
+			//Added by Hologram(Following 1 line).
 			ZTest Always
 //			ZTest[unity_GUIZTestMode]
 			Blend SrcAlpha OneMinusSrcAlpha
