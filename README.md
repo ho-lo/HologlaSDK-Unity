@@ -34,7 +34,7 @@ Unityの上部メニューの[Hologla]から[Initialize Project with ARKit]と[I
 
 
 ## 各種Prefabについて
-- HolograCameraParent
+- HologlaCameraParent
 
 だんグラの表示に関する制御を行っています。  
 HologlaCameraManagerコンポーネントより、AR/MR/VR、1眼、2眼等の切り替えの設定や端末サイズ対応用の設定が行えます。  
