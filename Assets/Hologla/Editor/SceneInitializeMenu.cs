@@ -23,6 +23,8 @@ public class SceneInitializeMenu
 	const string DEFAULT_AR_CORE_SESSION_CONFIG_PATH = "Assets/GoogleARCore/Configurations/DefaultSessionConfig.asset";
 	const string HOLOGLA_AR_CORE_AR_MATERIAL_PATH = "Assets/GoogleARCore/SDK/Materials/ARBackground.mat";
 
+	const string AR_KIT_CAMERA_USAGE_DESCRIPTION = "ARKit";
+
 	[MenuItem("Hologla/ARKit/Initialize Project with ARKit")]
 	static void InitProjectForARKit()
 	{
@@ -37,6 +39,12 @@ public class SceneInitializeMenu
 		//プラットフォームがiOSになっていない場合は切り替える.
 #if !UNITY_IOS
 		EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.iOS, BuildTarget.iOS);
+#endif
+#if UNITY_2017_1_OR_NEWER
+		//カメラを使用するための表記が設定されていない場合は適当に設定.
+		if( 0 == PlayerSettings.iOS.cameraUsageDescription.Length ){
+			PlayerSettings.iOS.cameraUsageDescription = AR_KIT_CAMERA_USAGE_DESCRIPTION;
+		}
 #endif
 
 		return;
@@ -105,6 +113,10 @@ public class SceneInitializeMenu
 		//プラットフォームがAndroidになっていない場合は切り替える.
 #if !UNITY_ANDROID
 		EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Android, BuildTarget.Android);
+#endif
+		//ARCore設定を有効化する.
+#if UNITY_2018_2_OR_NEWER && !UNITY_2018_2_0
+		UnityEditor.PlayerSettings.Android.ARCoreEnabled = true;
 #endif
 
 		return;
