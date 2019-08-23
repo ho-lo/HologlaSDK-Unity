@@ -139,9 +139,9 @@ namespace Hologla{
 				singleCamera.gameObject.SetActive(false);
 				leftEyeCamera.gameObject.SetActive(false);
 				rightEyeCamera.gameObject.SetActive(false);
-				singleArCameraBackground = singleCamera.gameObject.AddComponent<GoogleARCore.ARCoreBackgroundRenderer>( );
-				leftArCameraBackground = leftEyeCamera.gameObject.AddComponent<GoogleARCore.ARCoreBackgroundRenderer>( );
-				rightArCameraBackground = rightEyeCamera.gameObject.AddComponent<GoogleARCore.ARCoreBackgroundRenderer>( );
+				singleArCameraBackground = singleCamera.gameObject.AddComponent<HologlaARCoreVideo>( );
+				leftArCameraBackground = leftEyeCamera.gameObject.AddComponent<HologlaARCoreVideo>( );
+				rightArCameraBackground = rightEyeCamera.gameObject.AddComponent<HologlaARCoreVideo>( );
 				singleArCameraBackground.BackgroundMaterial = arBackgroundMaterial;
 				leftArCameraBackground.BackgroundMaterial = arBackgroundMaterial;
 				rightArCameraBackground.BackgroundMaterial = arBackgroundMaterial;

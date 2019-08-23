@@ -265,6 +265,7 @@
     <Compile Include="Assets\Hologla\Animation\SystemMenu\DanglaMenuIn.cs" />
     <Compile Include="Assets\Hologla\Scripts\GazeInput.cs" />
     <Compile Include="Assets\Hologla\Scripts\GazeInteractive.cs" />
+    <Compile Include="Assets\Hologla\Scripts\HologlaARCoreVideo.cs" />
     <Compile Include="Assets\Hologla\Scripts\HologlaARKitVideo.cs" />
     <Compile Include="Assets\Hologla\Scripts\HologlaCameraManager.cs" />
     <Compile Include="Assets\Hologla\Scripts\HologlaInput.cs" />

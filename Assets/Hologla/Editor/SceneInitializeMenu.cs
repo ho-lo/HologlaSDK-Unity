@@ -21,7 +21,7 @@ public class SceneInitializeMenu
 	const string HOLOGLA_YUV_MATERIAL_PATH = "Assets/Hologla/Materials/HologlaYUVMaterial.mat";
 
 	const string DEFAULT_AR_CORE_SESSION_CONFIG_PATH = "Assets/GoogleARCore/Configurations/DefaultSessionConfig.asset";
-	const string HOLOGLA_AR_CORE_AR_MATERIAL_PATH = "Assets/GoogleARCore/SDK/ARBackground.mat";
+	const string HOLOGLA_AR_CORE_AR_MATERIAL_PATH = "Assets/GoogleARCore/SDK/Materials/ARBackground.mat";
 
 	[MenuItem("Hologla/ARKit/Initialize Project with ARKit")]
 	static void InitProjectForARKit()
