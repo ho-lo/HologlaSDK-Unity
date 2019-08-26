@@ -2,7 +2,7 @@
 
 ## ライセンスについて
 MITライセンスになります。
-Lisence.txtをご確認ください。
+Assets/Hologla/Lisence.txtをご確認ください。
 
 ## プラグインの動作環境について
 Unity2017.x以降のバージョンを想定しています。  
