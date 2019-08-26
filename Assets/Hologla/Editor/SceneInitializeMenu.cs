@@ -17,10 +17,11 @@ public class SceneInitializeMenu
 {
 	const string HOLOGLA_CAMERA_PARENT_PATH = "Assets/Hologla/Prefabs/HologlaCameraParent.prefab";
 	const string HOLOGLA_INPUT_PATH = "Assets/Hologla/Prefabs/HologlaInput.prefab";
-	const string PLAYMENU_PATH = "Assets/Hologla/Prefabs/Samples/PlayMenu.prefab";
+//	const string PLAYMENU_PATH = "Assets/Hologla/Prefabs/Samples/PlayMenu.prefab";
 	const string HOLOGLA_YUV_MATERIAL_PATH = "Assets/Hologla/Materials/HologlaYUVMaterial.mat";
 
-	const string DEFAULT_AR_CORE_SESSION_CONFIG_PATH = "Assets/GoogleARCore/Configurations/DefaultSessionConfig.asset";
+	const string AR_CORE_SESSION_PREFAB_PATH = "Assets/GoogleARCore/Prefabs/ARCore Device.prefab";
+
 	const string HOLOGLA_AR_CORE_AR_MATERIAL_PATH = "Assets/GoogleARCore/SDK/Materials/ARBackground.mat";
 
 	const string AR_KIT_CAMERA_USAGE_DESCRIPTION = "ARKit";
@@ -152,12 +153,19 @@ public class SceneInitializeMenu
 
 		//ARCameraManagerを配置
 #if UNITY_ANDROID
-        GameObject arCoreSessionObj = new GameObject("ARCoreSession");
-        GoogleARCore.ARCoreSession arCoreSessionComp = arCoreSessionObj.AddComponent<GoogleARCore.ARCoreSession>( );
-		GoogleARCore.ARCoreSessionConfig aRCoreSessionConfig = LoadAssetAtPath<GoogleARCore.ARCoreSessionConfig>(DEFAULT_AR_CORE_SESSION_CONFIG_PATH);
-		arCoreSessionComp.SessionConfig = aRCoreSessionConfig;
+		//ARCoreSessionコンポーネントをPlugin内のPrefabからコピーしてくる.
+		GameObject arCoreSessionSrcObj = LoadAssetAtPath<GameObject>(AR_CORE_SESSION_PREFAB_PATH);
+		GoogleARCore.ARCoreSession arCoreSessionComp ;
+		GameObject arCoreSessionObj = new GameObject("ARCoreSession");
 
-		TrackedPoseDriver trackedPoseDriver;
+		arCoreSessionComp = arCoreSessionSrcObj.GetComponent<GoogleARCore.ARCoreSession>( );
+		if( null != arCoreSessionComp ){
+			UnityEditorInternal.ComponentUtility.CopyComponent(arCoreSessionComp);	
+			//※ARCoreSessionコンポーネントを追加した瞬間、OnValidate関数が実行されて、そこから値が設定されていない旨のエラーメッセージが生成されてしまう.
+			UnityEditorInternal.ComponentUtility.PasteComponentAsNew(arCoreSessionObj);
+		}
+
+		TrackedPoseDriver trackedPoseDriver ;
 		trackedPoseDriver = hologlaCameraParent.GetComponent<HologlaCameraManager>( ).gameObject.AddComponent<TrackedPoseDriver>( );
 		trackedPoseDriver.SetPoseSource(TrackedPoseDriver.DeviceType.GenericXRDevice, TrackedPoseDriver.TrackedPose.ColorCamera);
 #endif
