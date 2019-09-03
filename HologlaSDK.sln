@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HologlaSDK", "HologlaSDK.csproj", "{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HologlaSDK.Editor", "HologlaSDK.Editor.csproj", "{12E928D3-C948-4559-A949-C97EF50F533B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E928D3-C948-4559-A949-C97EF50F533B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E928D3-C948-4559-A949-C97EF50F533B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E928D3-C948-4559-A949-C97EF50F533B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E928D3-C948-4559-A949-C97EF50F533B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

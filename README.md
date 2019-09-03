@@ -18,7 +18,7 @@ https://github.com/google-ar/arcore-unity-sdk
 Unityプロジェクトを開く、または既存のプロジェクトにunitypackageをインポートします。
 
 #### iOS
-ARKitのプラグインがプロジェクトにインポートされていない場合はインポートします。
+ARKitのUnityプラグインがプロジェクトにインポートされていない場合はインポートします。
 
 Unityの上部メニューの[Hologla]から[Initialize Project with ARKit]と[Initialize Scene with ARKit]を順番に選択し、実行します。
 
@@ -29,8 +29,15 @@ Unityの上部メニューの[Hologla]から[Initialize Project with ARKit]と[I
 以上の設定で画面表示、入力関連のセットアップは完了となります。
 
 #### Android
-現在対応中です。
+ARCoreのUnityプラグインがプロジェクトにインポートされていない場合はインポートします。
 
+Unityの上部メニューの[Hologla]から[Initialize Project with ARCore]と[Initialize Scene with ARCore]を順番に選択し、実行します。
+
+**※もし「HologlaCamera」にある「HologlaCameraManager」コンポーネントの「ArBackgroundMaterial」がNone場合は、  
+「HologlaCamera」にある「HologlaCameraManager」コンポーネントの「ArBackgroundMaterial」に「GoogleARCore」→「SDK」→「Materials」フォルダ内の「ARBackground」を設定してください。
+(Unityのバージョン等によって正常に設定されないことがあります。)**
+
+以上の設定で画面表示、入力関連のセットアップは完了となります。
 
 
 ## 各種Prefabについて

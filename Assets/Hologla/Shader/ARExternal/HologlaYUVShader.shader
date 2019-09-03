@@ -7,7 +7,7 @@ https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/src/default/LICENSES
 
 ====================================================================================================*/
 
-Shader "Hologla/ARCameraShader"
+Shader "Hologla/ARKitCameraShader"
 {
 	Properties
 	{
