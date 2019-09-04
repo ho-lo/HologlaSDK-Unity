@@ -36,6 +36,7 @@ Unityの上部メニューの[Hologla]から[Initialize Project with ARCore]と[
 **※もし「HologlaCamera」にある「HologlaCameraManager」コンポーネントの「ArBackgroundMaterial」がNone場合は、  
 「HologlaCamera」にある「HologlaCameraManager」コンポーネントの「ArBackgroundMaterial」に「GoogleARCore」→「SDK」→「Materials」フォルダ内の「ARBackground」を設定してください。
 (Unityのバージョン等によって正常に設定されないことがあります。)**
+<br>
 **※Unity2018.1.x以前のバージョンを使用している場合は、別途AndroidのPlayerSettingsから「XRSettings」の「ARCoreSupported」にチェックを入れる必要があります。**
 
 以上の設定で画面表示、入力関連のセットアップは完了となります。
