@@ -7,17 +7,17 @@ namespace Hologla
 {
 	public class HologlaARCoreVideo : GoogleARCore.ARCoreBackgroundRenderer
 	{
-		Camera selfCamera = null ;
+		Camera camera = null ;
 		Matrix4x4 projMatrix ;
 
 		private void Awake( )
 		{
-			selfCamera = GetComponent<Camera>( );
-			if( null != selfCamera ){
+			camera = GetComponent<Camera>( );
+			if( null != camera ){
 				//カメラのプロジェクション行列の初期値を保持しておく.
-				projMatrix = selfCamera.projectionMatrix;
+				projMatrix = camera.projectionMatrix;
 			}
-
+			
 			return;
 		}
 
@@ -25,11 +25,10 @@ namespace Hologla
 		{
 			const string topLeftRight = "_UvTopLeftRight" ;
 			const string bottomLeftRight = "_UvBottomLeftRight" ;
-			const string brightnessVar = "_Brightness" ;
 			Vector4 topUv, bottomUv ;
 			GoogleARCore.DisplayUvCoords uvCoords ;
 
-			uvCoords = GoogleARCore.Frame.CameraImage.TextureDisplayUvs;
+			uvCoords = GoogleARCore.Frame.CameraImage.DisplayUvCoords;
 			topUv = new Vector4(uvCoords.TopLeft.x, uvCoords.TopLeft.y, uvCoords.TopRight.x, uvCoords.TopRight.y);
 			bottomUv = new Vector4(uvCoords.BottomLeft.x, uvCoords.BottomLeft.y, uvCoords.BottomRight.x, uvCoords.BottomRight.y);
 
@@ -41,19 +40,16 @@ namespace Hologla
 				bottomUv.z = (bottomUv.z * 0.5f) + 0.25f;
 			}
 
-			BackgroundMaterial.SetTexture("_TransitionIconTex", null);
-			BackgroundMaterial.SetFloat(brightnessVar, 1.0f);
 			BackgroundMaterial.SetVector(topLeftRight, topUv);
 			BackgroundMaterial.SetVector(bottomLeftRight, bottomUv);
 
 			//ARCoreBackgroundRendererのUpdateで書き換えられるため、カメラのプロジェクション行列を設定し直す.
-			if( null != selfCamera ){
-				selfCamera.projectionMatrix = projMatrix;
+			if( null != camera ){
+				camera.projectionMatrix = projMatrix;
 			}
 
 			return;
 		}
-
 	}
 }
 #endif
