@@ -1096,6 +1096,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114419358158769968, guid: 3a50cbb25f06c4f4e8b51f2edbe41672,
+        type: 2}
+      propertyPath: playMenuAnimator
+      value: 
+      objectReference: {fileID: 1477418533}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a50cbb25f06c4f4e8b51f2edbe41672, type: 2}
   m_IsPrefabParent: 0
@@ -1121,20 +1126,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1749328334}
   m_Script: {fileID: 11500000, guid: cfa718f10d5dabf4e9c8927a6f03b7e3, type: 3}
---- !u!114 &1749328339
+--- !u!114 &1749328339 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1749328335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 114419358158769968, guid: 3a50cbb25f06c4f4e8b51f2edbe41672,
+    type: 2}
+  m_PrefabInternal: {fileID: 1749328334}
   m_Script: {fileID: 11500000, guid: 158d19a2d7d33448993a5aaeb228e9bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hologlaManager: {fileID: 1749328338}
-  spawnObj: {fileID: 1749328337}
-  playMenuAnimator: {fileID: 1477418533}
 --- !u!1 &1966786932
 GameObject:
   m_ObjectHideFlags: 0
