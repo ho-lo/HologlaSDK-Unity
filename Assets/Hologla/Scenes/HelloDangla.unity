@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115f5322efe133b44a62a047382cff20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hologlaManager: {fileID: 0}
+  hologlaManager: {fileID: 1749328338}
   spawnObj: {fileID: 1966786932}
   playMenuAnimator: {fileID: 1477418533}
 --- !u!4 &1046908727
@@ -562,7 +562,7 @@ Prefab:
     - target: {fileID: 114645472888094862, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114032320752611004, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 2}
@@ -759,7 +759,7 @@ Prefab:
     - target: {fileID: 114645472888094862, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114645472888094862, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 2}
@@ -770,22 +770,22 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1046908726}
+      objectReference: {fileID: 1749328339}
     - target: {fileID: 114645472888094862, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: OpenPlayMenu
+      value: ResetMenuRotation
       objectReference: {fileID: 0}
     - target: {fileID: 114645472888094862, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 114645472888094862, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1749328337}
     - target: {fileID: 114645472888094862, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
@@ -917,7 +917,7 @@ Prefab:
         type: 2}
       propertyPath: onRightClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1749328338}
     - target: {fileID: 114589985309306762, guid: 8652f069ed7643549ba7fcc0bacdb7c6,
         type: 2}
       propertyPath: onRightClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -937,6 +937,31 @@ Prefab:
         type: 2}
       propertyPath: onRightClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1749328338}
+    - target: {fileID: 114162189983124076, guid: 8652f069ed7643549ba7fcc0bacdb7c6,
+        type: 2}
+      propertyPath: onRightClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114589985309306762, guid: 8652f069ed7643549ba7fcc0bacdb7c6,
+        type: 2}
+      propertyPath: onRightClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SwitchScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114589985309306762, guid: 8652f069ed7643549ba7fcc0bacdb7c6,
+        type: 2}
+      propertyPath: onRightClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114589985309306762, guid: 8652f069ed7643549ba7fcc0bacdb7c6,
+        type: 2}
+      propertyPath: onRightClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114589985309306762, guid: 8652f069ed7643549ba7fcc0bacdb7c6,
+        type: 2}
+      propertyPath: onRightClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8652f069ed7643549ba7fcc0bacdb7c6, type: 2}
@@ -1085,6 +1110,31 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1749328334}
   m_Script: {fileID: 11500000, guid: b62288de32b1e5449ba002b7a0ae7dfc, type: 3}
+--- !u!1 &1749328337 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1983979069957584, guid: 3a50cbb25f06c4f4e8b51f2edbe41672,
+    type: 2}
+  m_PrefabInternal: {fileID: 1749328334}
+--- !u!114 &1749328338 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114735710719748522, guid: 3a50cbb25f06c4f4e8b51f2edbe41672,
+    type: 2}
+  m_PrefabInternal: {fileID: 1749328334}
+  m_Script: {fileID: 11500000, guid: cfa718f10d5dabf4e9c8927a6f03b7e3, type: 3}
+--- !u!114 &1749328339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1749328335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158d19a2d7d33448993a5aaeb228e9bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hologlaManager: {fileID: 1749328338}
+  spawnObj: {fileID: 1749328337}
+  playMenuAnimator: {fileID: 1477418533}
 --- !u!1 &1966786932
 GameObject:
   m_ObjectHideFlags: 0
