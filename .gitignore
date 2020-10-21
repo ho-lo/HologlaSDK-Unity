@@ -4,7 +4,6 @@
 Library
 Temp
 /[Oo]bj/
-/Assets/Plugins*
 
 # Rider関連
 .idea
@@ -24,3 +23,5 @@ ExportedObj/
 *.svd
 *.pdb
 *.opendb
+.vs
+

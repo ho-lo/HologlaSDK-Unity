@@ -79,6 +79,14 @@ public class DanglaMenuSample : MonoBehaviour {
 
 		return;
 	}
+	
+	public void UrlUp(string url)
+	{
+		// WWW.URLリンク
+		Application.OpenURL(url);
+
+		return;
+	}
 
 	//各種メニュー項目の選択状態を更新する.
 	public void UpdateSelectFrame( )
