@@ -21,6 +21,7 @@ public class SceneInitializeMenu
 	const string HOLOGLA_YUV_MATERIAL_PATH = "Assets/Hologla/Materials/HologlaYUVMaterial.mat";
 
 	const string DEFAULT_AR_CORE_SESSION_CONFIG_PATH = "Assets/GoogleARCore/Configurations/DefaultSessionConfig.asset";
+	const string DEFAULT_AR_CORE_CAMERA_CONFIG_PATH = "Assets/GoogleARCore/Configurations/DefaultCameraConfigFilter.asset";
 	const string HOLOGLA_AR_CORE_AR_MATERIAL_PATH = "Assets/GoogleARCore/SDK/Materials/ARBackground.mat";
 
 	const string AR_KIT_CAMERA_USAGE_DESCRIPTION = "ARKit";
@@ -152,10 +153,14 @@ public class SceneInitializeMenu
 
 		//ARCameraManagerを配置
 #if UNITY_ANDROID
-        GameObject arCoreSessionObj = new GameObject("ARCoreSession");
-        GoogleARCore.ARCoreSession arCoreSessionComp = arCoreSessionObj.AddComponent<GoogleARCore.ARCoreSession>( );
+		//空のオブジェクトを作成して、ARCoreSessionコンポーネントを追加後、パラメーターの設定を行う.
+		GoogleARCore.ARCoreCameraConfigFilter aRCoreCameraConfigFilter;
+		GameObject arCoreSessionObj = new GameObject("ARCoreSession");
+		GoogleARCore.ARCoreSession arCoreSessionComp = arCoreSessionObj.AddComponent<GoogleARCore.ARCoreSession>( );
 		GoogleARCore.ARCoreSessionConfig aRCoreSessionConfig = LoadAssetAtPath<GoogleARCore.ARCoreSessionConfig>(DEFAULT_AR_CORE_SESSION_CONFIG_PATH);
 		arCoreSessionComp.SessionConfig = aRCoreSessionConfig;
+		aRCoreCameraConfigFilter = LoadAssetAtPath<GoogleARCore.ARCoreCameraConfigFilter>(DEFAULT_AR_CORE_CAMERA_CONFIG_PATH);
+		arCoreSessionComp.CameraConfigFilter = aRCoreCameraConfigFilter;
 
 		TrackedPoseDriver trackedPoseDriver;
 		trackedPoseDriver = hologlaCameraParent.GetComponent<HologlaCameraManager>( ).gameObject.AddComponent<TrackedPoseDriver>( );
