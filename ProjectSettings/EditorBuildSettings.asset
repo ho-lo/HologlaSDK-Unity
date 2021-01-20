@@ -14,3 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hologla/Scenes/HelloDangla.unity
     guid: 95b2db2c36f792c4e841ee08c3eb9d2b
+  - enabled: 0
+    path: Assets/Hologla/Scenes/HelloDangla_ARCore.unity
+    guid: 521497008ec235147bb9dedae375baa8
+  m_configObjects:
+    com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 4d905d6eea3f54e4a924416ce389a9e5,
+      type: 2}
+    com.unity.xr.arkit.PlayerSettings: {fileID: 11400000, guid: c61d0dc6b5e9d0840bea299e5ec1cbfa,
+      type: 2}

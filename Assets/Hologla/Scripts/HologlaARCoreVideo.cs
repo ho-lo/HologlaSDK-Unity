@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID && false
 namespace Hologla
 {
 	public class HologlaARCoreVideo : GoogleARCore.ARCoreBackgroundRenderer

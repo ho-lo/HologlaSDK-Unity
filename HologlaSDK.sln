@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HologlaSDK", "HologlaSDK.csproj", "{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{9E55D7F3-F373-6AFB-E46D-FCB8F57C513A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HologlaSDK.Editor", "HologlaSDK.Editor.csproj", "{12E928D3-C948-4559-A949-C97EF50F533B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{9D17A4AF-8653-BDB2-8FCA-F6C2A968C04F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FEE6D4B-99AA-95E3-2BFB-37F26F8BAC29}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12E928D3-C948-4559-A949-C97EF50F533B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12E928D3-C948-4559-A949-C97EF50F533B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12E928D3-C948-4559-A949-C97EF50F533B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12E928D3-C948-4559-A949-C97EF50F533B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E55D7F3-F373-6AFB-E46D-FCB8F57C513A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E55D7F3-F373-6AFB-E46D-FCB8F57C513A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E55D7F3-F373-6AFB-E46D-FCB8F57C513A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E55D7F3-F373-6AFB-E46D-FCB8F57C513A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D17A4AF-8653-BDB2-8FCA-F6C2A968C04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D17A4AF-8653-BDB2-8FCA-F6C2A968C04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D17A4AF-8653-BDB2-8FCA-F6C2A968C04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D17A4AF-8653-BDB2-8FCA-F6C2A968C04F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

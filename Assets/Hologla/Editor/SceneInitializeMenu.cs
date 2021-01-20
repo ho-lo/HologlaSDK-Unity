@@ -154,13 +154,13 @@ public class SceneInitializeMenu
 		//ARCameraManagerを配置
 #if UNITY_ANDROID
 		//空のオブジェクトを作成して、ARCoreSessionコンポーネントを追加後、パラメーターの設定を行う.
-		GoogleARCore.ARCoreCameraConfigFilter aRCoreCameraConfigFilter;
+/*		GoogleARCore.ARCoreCameraConfigFilter aRCoreCameraConfigFilter;
 		GameObject arCoreSessionObj = new GameObject("ARCoreSession");
 		GoogleARCore.ARCoreSession arCoreSessionComp = arCoreSessionObj.AddComponent<GoogleARCore.ARCoreSession>( );
 		GoogleARCore.ARCoreSessionConfig aRCoreSessionConfig = LoadAssetAtPath<GoogleARCore.ARCoreSessionConfig>(DEFAULT_AR_CORE_SESSION_CONFIG_PATH);
 		arCoreSessionComp.SessionConfig = aRCoreSessionConfig;
 		aRCoreCameraConfigFilter = LoadAssetAtPath<GoogleARCore.ARCoreCameraConfigFilter>(DEFAULT_AR_CORE_CAMERA_CONFIG_PATH);
-		arCoreSessionComp.CameraConfigFilter = aRCoreCameraConfigFilter;
+		arCoreSessionComp.CameraConfigFilter = aRCoreCameraConfigFilter;*/
 
 		TrackedPoseDriver trackedPoseDriver;
 		trackedPoseDriver = hologlaCameraParent.GetComponent<HologlaCameraManager>( ).gameObject.AddComponent<TrackedPoseDriver>( );
