@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Events;
 using UnityEngine;
-#if UNITY_IOS
+#if UNITY_IOS && false
 using UnityEngine.XR.iOS;
 #elif UNITY_ANDROID
 using UnityEngine.SpatialTracking;
@@ -81,7 +81,7 @@ public class SceneInitializeMenu
 		GameObject hologlaCameraParent = hologlaCameraParentRoot.transform.Find("HologlaCamera").gameObject;
 
 		//ARCameraManagerを配置
-#if UNITY_IOS
+#if UNITY_IOS && false
         GameObject arCameraManager = new GameObject("ARCameraManager");
         UnityARCameraManager unityARCameraManager = arCameraManager.AddComponent<UnityARCameraManager>( );
 		unityARCameraManager.m_camera = hologlaCameraParent.GetComponent<Camera>( );

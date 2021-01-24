@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Rendering;
-#if UNITY_IOS
+#if UNITY_IOS && false
 using UnityEngine.XR.iOS;
 #endif
 
@@ -22,13 +22,13 @@ namespace Hologla
 
 		public void Start()
 		{
-#if UNITY_IOS
+#if UNITY_IOS && false
 			UnityARSessionNativeInterface.ARFrameUpdatedEvent += UpdateFrame;
 #endif
 			bCommandBufferInitialized = false;
 		}
 
-#if UNITY_IOS
+#if UNITY_IOS && false
 		void UpdateFrame(UnityARCamera cam)
 		{
 			_displayTransform = new Matrix4x4();
@@ -53,7 +53,7 @@ namespace Hologla
 			if (m_VideoCommandBuffer != null) {
 				GetComponent<Camera>().RemoveCommandBuffer(CameraEvent.BeforeForwardOpaque, m_VideoCommandBuffer);
 			}
-#if UNITY_IOS
+#if UNITY_IOS && false
 			UnityARSessionNativeInterface.ARFrameUpdatedEvent -= UpdateFrame;
 #endif
 			bCommandBufferInitialized = false;
