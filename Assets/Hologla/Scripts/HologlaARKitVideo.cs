@@ -59,7 +59,7 @@ namespace Hologla
 			bCommandBufferInitialized = false;
 		}
 
-#if !UNITY_EDITOR && UNITY_IOS
+#if !UNITY_EDITOR && UNITY_IOS && false
 
         public void OnPreRender()
         {
