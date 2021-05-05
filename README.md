@@ -4,43 +4,29 @@
 MITライセンスになります。
 Assets/Hologla/Lisence.txtをご確認ください。
 
-## プラグインの動作環境について
-Unity2017.x以降のバージョンを想定しています。  
-また、基本的にARKit、またはARCoreを利用してiOS、Android端末にて動作させることを想定しているため、iOS、またはAndroidプラットフォームの際に対応したARKit/ARCoreのプラグインをインポートしているプロジェクトデータではないと正常に動作しません。  
-- 動作確認済みARKitのUntyプラグイン
-https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/src/default/
-- 動作確認済みARCoreのUnityプラグイン
-https://github.com/google-ar/arcore-unity-sdk
+## AR機能の動作環境について
+Unity2019.x以降のバージョンを想定しています。  
+基本的にARKit、またはARCoreを利用してiOS、Android端末にて動作させることを想定しているため、
+ARFoundation及びARKit、ARCore等のプラグインを使用します(PackageManager設定にて設定しています)。
+現在動作確認しているバージョンは4.1.5です。
 
-※現在はベータ版です、内容は予告なく変更されることがあります。
+また、動作確認には対応している端末が必要です。
+#### iOS
+iPhone SE、iPhone 6s以降の端末
+対応端末一覧は以下ページの下部参照
+https://www.apple.com/jp/augmented-reality/
+
+#### Android
+Android 7.0以降の対応端末
+対応端末一覧は以下ページの下部参照
+https://developers.google.com/ar/devices
 
 ## 導入手順について
 Unityプロジェクトを開く、または既存のプロジェクトにunitypackageをインポートします。
 
-#### iOS
-ARKitのUnityプラグインがプロジェクトにインポートされていない場合はインポートします。
-
-Unityの上部メニューの[Hologla]から[Initialize Project with ARKit]と[Initialize Scene with ARKit]を順番に選択し、実行します。
-
-**※もし「HologlaCamera」にある「HologlaCameraManager」コンポーネントの「ArBackgroundMaterial」がNone場合は、  
-「HologlaCamera」にある「HologlaCameraManager」コンポーネントの「ArBackgroundMaterial」に「Hologla」→「Material」フォルダ内の「HologlaYUVMaterial」を設定してください。
-(Unityのバージョン等によって正常に設定されないことがあります。)**
+Unityの上部メニューの[Hologla]から[Initialize Project]と[Initialize Scene]を順番に選択し、実行します。
 
 以上の設定で画面表示、入力関連のセットアップは完了となります。
-
-#### Android
-ARCoreのUnityプラグインがプロジェクトにインポートされていない場合はインポートします。
-
-Unityの上部メニューの[Hologla]から[Initialize Project with ARCore]と[Initialize Scene with ARCore]を順番に選択し、実行します。
-
-**※もし「HologlaCamera」にある「HologlaCameraManager」コンポーネントの「ArBackgroundMaterial」がNone場合は、  
-「HologlaCamera」にある「HologlaCameraManager」コンポーネントの「ArBackgroundMaterial」に「GoogleARCore」→「SDK」→「Materials」フォルダ内の「ARBackground」を設定してください。
-(Unityのバージョン等によって正常に設定されないことがあります。)**
-<br>
-**※Unity2018.1.x以前のバージョンを使用している場合は、別途AndroidのPlayerSettingsから「XRSettings」の「ARCoreSupported」にチェックを入れる必要があります。**
-
-以上の設定で画面表示、入力関連のセットアップは完了となります。
-
 
 ## 各種Prefabについて
 - HologlaCameraParent
