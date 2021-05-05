@@ -430,6 +430,26 @@ namespace Hologla
 		}
 		//====================シーン制御/prefab制御用====================.
 
-
 	}
+
+	
+#if UNITY_EDITOR
+	[UnityEditor.CustomEditor(typeof(HologlaCameraManager))]
+	class HologlaCameraManager_Editor : UnityEditor.Editor{
+		public override void OnInspectorGUI( )
+		{
+			//元のInspector部分を表示
+			base.OnInspectorGUI( );
+
+			//ボタンを表示
+			if( true == GUILayout.Button("SaveCurrentSetting") ){
+				HologlaCameraManager hologlaCameraManager = target as HologlaCameraManager;
+				if( null != hologlaCameraManager ){
+					hologlaCameraManager.SaveCurrentSetting( );
+				}
+			}
+		}
+	}
+#endif
+
 }
