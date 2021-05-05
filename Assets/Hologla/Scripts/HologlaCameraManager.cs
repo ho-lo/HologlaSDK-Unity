@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 
-namespace Hologla{
+namespace Hologla
+{
 	public class HologlaCameraManager : MonoBehaviour {
 
 		//表示モード(AR/MR/VR).
@@ -138,40 +136,25 @@ namespace Hologla{
 			//ARカメラ用に紐づけるARKit/ARCore用コンポーネントを設定する.
 #if UNITY_ANDROID
 			if( null != arBackgroundMaterial ){
-				singleCamera.gameObject.SetActive(false);
-				leftEyeCamera.gameObject.SetActive(false);
-				rightEyeCamera.gameObject.SetActive(false);
-/*				singleArCameraBackground = singleCamera.gameObject.AddComponent<HologlaARCoreVideo>( );
-				leftArCameraBackground = leftEyeCamera.gameObject.AddComponent<HologlaARCoreVideo>( );
-				rightArCameraBackground = rightEyeCamera.gameObject.AddComponent<HologlaARCoreVideo>( );
-				singleArCameraBackground.BackgroundMaterial = arBackgroundMaterial;
-				leftArCameraBackground.BackgroundMaterial = arBackgroundMaterial;
-				rightArCameraBackground.BackgroundMaterial = arBackgroundMaterial;*/
 				singleCamera.gameObject.SetActive(true);
 				leftEyeCamera.gameObject.SetActive(true);
 				rightEyeCamera.gameObject.SetActive(true);
 			}
 #elif UNITY_IOS
 			if( null != arBackgroundMaterial ){
-				singleCamera.gameObject.SetActive(false);
-				leftEyeCamera.gameObject.SetActive(false);
-				rightEyeCamera.gameObject.SetActive(false);
-/*				singleArCameraBackground = singleCamera.gameObject.AddComponent<HologlaARKitVideo>( );
-				leftArCameraBackground = leftEyeCamera.gameObject.AddComponent<HologlaARKitVideo>( );
-				rightArCameraBackground = rightEyeCamera.gameObject.AddComponent<HologlaARKitVideo>( );
-				singleArCameraBackground.m_ClearMaterial = arBackgroundMaterial;
-				leftArCameraBackground.m_ClearMaterial = arBackgroundMaterial;
-				rightArCameraBackground.m_ClearMaterial = arBackgroundMaterial;*/
 				singleCamera.gameObject.SetActive(true);
 				leftEyeCamera.gameObject.SetActive(true);
 				rightEyeCamera.gameObject.SetActive(true);
 			}
 #endif
-#if UNITY_ANDROID || UNITY_IOS
-			if( null == arCameraBackgroundArray ) {
-				arCameraBackgroundArray = GetComponentsInChildren<ARCameraBackground>( );
+			if( null == arCameraBackgroundArray ){
+				arCameraBackgroundArray = GetComponentsInChildren<ARCameraBackground>(true);
 			}
-#endif
+			foreach( ARCameraBackground arCameraBackground in arCameraBackgroundArray ){
+				arCameraBackground.useCustomMaterial = true;
+				arCameraBackground.customMaterial = arBackgroundMaterial;
+			}
+
 			currentViewMode = UserSettings.viewMode;
 			currentEyeMode = UserSettings.eyeMode;
 			interpupillaryDistance = UserSettings.interpupillaryDistance;
@@ -387,22 +370,11 @@ namespace Hologla{
 
 		private void SwitchARCameraValid(bool isValid)
 		{
-#if UNITY_ANDROID || UNITY_IOS
-/*			if( null != singleArCameraBackground ){
-				singleArCameraBackground.enabled = isValid;
-			}
-			if( null != leftArCameraBackground ){
-				leftArCameraBackground.enabled = isValid;
-			}
-			if( null != rightArCameraBackground ){
-				rightArCameraBackground.enabled = isValid;
-			}*/
 			if( null != arCameraBackgroundArray ){
 				foreach( ARCameraBackground arCameraBackground in arCameraBackgroundArray ){
 					arCameraBackground.enabled = isValid;
 				}
 			}
-#endif
 
 			return;
 		}

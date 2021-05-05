@@ -18,7 +18,11 @@ EditorBuildSettings:
     path: Assets/Hologla/Scenes/HelloDangla_ARCore.unity
     guid: 521497008ec235147bb9dedae375baa8
   m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 52acc67c6afbbe548aecc16178c9d0c5,
+      type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: c61d0dc6b5e9d0840bea299e5ec1cbfa,
+      type: 2}
     com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 4d905d6eea3f54e4a924416ce389a9e5,
       type: 2}
-    com.unity.xr.arkit.PlayerSettings: {fileID: 11400000, guid: c61d0dc6b5e9d0840bea299e5ec1cbfa,
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1de9c33f3ebd0f048a476714fc5e3951,
       type: 2}
