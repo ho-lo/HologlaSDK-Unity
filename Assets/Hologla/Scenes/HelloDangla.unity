@@ -750,7 +750,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1749328339}
+      objectReference: {fileID: 0}
     - target: {fileID: 114645472888094862, guid: 8b287fcaa5a8856408cd1b7ca23e853d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
@@ -1201,11 +1201,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa718f10d5dabf4e9c8927a6f03b7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1749328339 stripped
+--- !u!114 &1749328339
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114419358158769968, guid: 3a50cbb25f06c4f4e8b51f2edbe41672,
-    type: 3}
-  m_PrefabInstance: {fileID: 1749328334}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749328335}
   m_Enabled: 1
@@ -1213,6 +1213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158d19a2d7d33448993a5aaeb228e9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hologlaManager: {fileID: 1749328338}
+  spawnObj: {fileID: 1749328337}
+  playMenuAnimator: {fileID: 1477418533}
 --- !u!1 &1966786932
 GameObject:
   m_ObjectHideFlags: 0

@@ -241,8 +241,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FocusMode: 1
-  m_LightEstimationMode: 0
+  m_FocusMode: -1
+  m_LightEstimationMode: -1
+  m_AutoFocus: 1
+  m_LightEstimation: 0
+  m_FacingDirection: 1
 --- !u!114 &3181202849932262507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,8 +260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
-  m_UseCustomRendererAsset: 0
-  m_CustomRendererAsset: {fileID: 0}
 --- !u!1 &1309237857888214
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,8 +696,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FocusMode: 1
-  m_LightEstimationMode: 0
+  m_FocusMode: -1
+  m_LightEstimationMode: -1
+  m_AutoFocus: 1
+  m_LightEstimation: 0
+  m_FacingDirection: 1
 --- !u!114 &2263723552912723297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,8 +715,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
-  m_UseCustomRendererAsset: 0
-  m_CustomRendererAsset: {fileID: 0}
 --- !u!1 &1503294291319248
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,8 +821,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FocusMode: 1
-  m_LightEstimationMode: 0
+  m_FocusMode: -1
+  m_LightEstimationMode: -1
+  m_AutoFocus: 1
+  m_LightEstimation: 0
+  m_FacingDirection: 1
 --- !u!114 &5174060712169212542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,8 +840,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
-  m_UseCustomRendererAsset: 0
-  m_CustomRendererAsset: {fileID: 0}
 --- !u!1 &1543416351507992
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +951,6 @@ GameObject:
   - component: {fileID: 114735710719748522}
   - component: {fileID: 114103395556202336}
   - component: {fileID: 20803719635922316}
-  - component: {fileID: 114419358158769968}
   - component: {fileID: 6323632695877559867}
   - component: {fileID: 3660047591144280288}
   m_Layer: 0
@@ -1073,21 +1075,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &114419358158769968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722241947097298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 158d19a2d7d33448993a5aaeb228e9bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hologlaManager: {fileID: 114735710719748522}
-  spawnObj: {fileID: 1983979069957584}
-  playMenuAnimator: {fileID: 0}
 --- !u!114 &6323632695877559867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,8 +1105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FocusMode: 1
-  m_LightEstimationMode: 0
+  m_FocusMode: -1
+  m_LightEstimationMode: -1
+  m_AutoFocus: 1
+  m_LightEstimation: 0
+  m_FacingDirection: 1
 --- !u!1 &1810385002888746
 GameObject:
   m_ObjectHideFlags: 0

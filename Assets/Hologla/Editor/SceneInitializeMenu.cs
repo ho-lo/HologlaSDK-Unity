@@ -18,29 +18,12 @@ public class SceneInitializeMenu
 	const string HOLOGLA_CAMERA_PARENT_PATH = "Assets/Hologla/Prefabs/HologlaCameraParent.prefab";
 	const string HOLOGLA_INPUT_PATH = "Assets/Hologla/Prefabs/HologlaInput.prefab";
 	const string PLAYMENU_PATH = "Assets/Hologla/Prefabs/Samples/PlayMenu.prefab";
-	const string HOLOGLA_YUV_MATERIAL_PATH = "Assets/Hologla/Materials/HologlaYUVMaterial.mat";
-
-	const string DEFAULT_AR_CORE_SESSION_CONFIG_PATH = "Assets/GoogleARCore/Configurations/DefaultSessionConfig.asset";
-	const string DEFAULT_AR_CORE_CAMERA_CONFIG_PATH = "Assets/GoogleARCore/Configurations/DefaultCameraConfigFilter.asset";
-	const string HOLOGLA_AR_CORE_AR_MATERIAL_PATH = "Assets/GoogleARCore/SDK/Materials/ARBackground.mat";
 
 	const string AR_KIT_CAMERA_USAGE_DESCRIPTION = "ARKit";
 
-	[MenuItem("Hologla/ARKit/Initialize Project with ARKit")]
-	static void InitProjectForARKit()
+	[MenuItem("Hologla/Initialize Project")]
+	static void InitProject()
 	{
-		//ARKitプラグインがないままぷiOSプラットフォームにするとスクリプトにエラーが出るので、最初にプラグインの有無をチェックする.
-		if (false == Directory.Exists(Application.dataPath + "/UnityARKitPlugin"))
-		{
-			EditorUtility.DisplayDialog("エラー", "ARKitのプラグインがインポートされていないため、処理を中断しました。", "OK");
-
-			return;
-		}
-
-		//プラットフォームがiOSになっていない場合は切り替える.
-#if !UNITY_IOS
-		EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.iOS, BuildTarget.iOS);
-#endif
 #if UNITY_2017_1_OR_NEWER
 		//カメラを使用するための表記が設定されていない場合は適当に設定.
 		if( 0 == PlayerSettings.iOS.cameraUsageDescription.Length ){
@@ -51,17 +34,9 @@ public class SceneInitializeMenu
 		return;
 	}
 
-	[MenuItem("Hologla/ARKit/Initialize Scene with ARKit")]
-	static void InitSceneForARKit()
+	[MenuItem("Hologla/Initialize Scene")]
+	static void InitScene()
 	{
-		//ARKitプラグインがないままぷiOSプラットフォームにするとスクリプトにエラーが出るので、最初にプラグインの有無をチェックする.
-		if (false == Directory.Exists(Application.dataPath + "/UnityARKitPlugin"))
-		{
-			EditorUtility.DisplayDialog("エラー", "ARKitのプラグインがインポートされていないため、処理を中断しました。", "OK");
-
-			return;
-		}
-
 		//デフォルトのMainCameraをDeactivate
 		if (Camera.main != null)
 		{
@@ -80,103 +55,12 @@ public class SceneInitializeMenu
 		//ルートのHologlaCameraParentの子のHologlaCameraを取得(HologlaCameraManagerが付いてる方).
 		GameObject hologlaCameraParent = hologlaCameraParentRoot.transform.Find("HologlaCamera").gameObject;
 
-		//ARCameraManagerを配置
-#if UNITY_IOS && false
-        GameObject arCameraManager = new GameObject("ARCameraManager");
-        UnityARCameraManager unityARCameraManager = arCameraManager.AddComponent<UnityARCameraManager>( );
-		unityARCameraManager.m_camera = hologlaCameraParent.GetComponent<Camera>( );
-        unityARCameraManager.planeDetection = UnityARPlaneDetection.Horizontal;
-		Undo.RegisterCreatedObjectUndo(arCameraManager, "Create " + arCameraManager.name);
-#endif
-
-		//HologlaCameraManagerのArBackgroundMaterialにHologlaYUVMaterialを設定
-		Material hologlaYuvMaterial = LoadAssetAtPath<Material>(HOLOGLA_YUV_MATERIAL_PATH);
 		HologlaCameraManager hologlaCameraManager = hologlaCameraParent.GetComponent<HologlaCameraManager>();
-		hologlaCameraManager.arBackgroundMaterial = hologlaYuvMaterial;
 
 		ApplyHologlaInputSetting(hologlaCameraManager, hologlaInput.GetComponent<HologlaInput>( ));
 
 		return;
 	}
-
-
-
-	[MenuItem("Hologla/ARCore/Initialize Project with ARCore")]
-	static void InitProjectForARCore( )
-	{
-		//ARCoreプラグインがないままぷAndroidプラットフォームにするとスクリプトにエラーが出るので、最初にプラグインの有無をチェックする.
-		if( Directory.Exists(Application.dataPath + "/GoogleARCore") == false ){
-			EditorUtility.DisplayDialog("エラー", "ARCoreのプラグインがインポートされていないため、処理を中断しました。", "OK");
-
-			return;
-		}
-
-		//プラットフォームがAndroidになっていない場合は切り替える.
-#if !UNITY_ANDROID
-		EditorUserBuildSettings.SwitchActiveBuildTargetAsync(BuildTargetGroup.Android, BuildTarget.Android);
-#endif
-		//ARCore設定を有効化する.
-#if UNITY_2018_2_OR_NEWER && !UNITY_2018_2_0
-		UnityEditor.PlayerSettings.Android.ARCoreEnabled = true;
-#endif
-
-		return;
-	}
-
-
-	[MenuItem("Hologla/ARCore/Initialize Scene with ARCore")]
-	static void InitSceneForARCore( )
-	{
-		//ARCoreプラグインがないままぷAndroidプラットフォームにするとスクリプトにエラーが出るので、最初にプラグインの有無をチェックする.
-		if( Directory.Exists(Application.dataPath + "/GoogleARCore") == false ){
-			EditorUtility.DisplayDialog("エラー", "ARCoreのプラグインがインポートされていないため、処理を中断しました。", "OK");
-
-			return;
-		}
-
-		//デフォルトのMainCameraをDeactivate
-		if( null != Camera.main ){
-			Undo.RecordObject(Camera.main.gameObject, "Deactivate Camera");
-			Camera.main.gameObject.SetActive(false);
-		}
-
-		//Hologlaのオブジェクト群を配置
-		GameObject hologlaCameraParentRoot = InstantiatePrefab(LoadAssetAtPath<GameObject>(HOLOGLA_CAMERA_PARENT_PATH)) as GameObject;
-		Undo.RegisterCreatedObjectUndo(hologlaCameraParentRoot, "Create " + hologlaCameraParentRoot.name);
-		GameObject hologlaInput = InstantiatePrefab(LoadAssetAtPath<GameObject>(HOLOGLA_INPUT_PATH)) as GameObject;
-		Undo.RegisterCreatedObjectUndo(hologlaInput, "Create " + hologlaInput.name);
-//		var playMenu = InstantiatePrefab(LoadAssetAtPath<GameObject>(PLAYMENU_PATH)) as GameObject;
-//		Undo.RegisterCreatedObjectUndo(playMenu, "Create " + playMenu.name);
-
-		//ルートのHologlaCameraParentの子のHologlaCameraを取得(HologlaCameraManagerが付いてる方).
-		GameObject hologlaCameraParent = hologlaCameraParentRoot.transform.Find("HologlaCamera").gameObject;
-
-		//ARCameraManagerを配置
-#if UNITY_ANDROID
-		//空のオブジェクトを作成して、ARCoreSessionコンポーネントを追加後、パラメーターの設定を行う.
-/*		GoogleARCore.ARCoreCameraConfigFilter aRCoreCameraConfigFilter;
-		GameObject arCoreSessionObj = new GameObject("ARCoreSession");
-		GoogleARCore.ARCoreSession arCoreSessionComp = arCoreSessionObj.AddComponent<GoogleARCore.ARCoreSession>( );
-		GoogleARCore.ARCoreSessionConfig aRCoreSessionConfig = LoadAssetAtPath<GoogleARCore.ARCoreSessionConfig>(DEFAULT_AR_CORE_SESSION_CONFIG_PATH);
-		arCoreSessionComp.SessionConfig = aRCoreSessionConfig;
-		aRCoreCameraConfigFilter = LoadAssetAtPath<GoogleARCore.ARCoreCameraConfigFilter>(DEFAULT_AR_CORE_CAMERA_CONFIG_PATH);
-		arCoreSessionComp.CameraConfigFilter = aRCoreCameraConfigFilter;*/
-
-		TrackedPoseDriver trackedPoseDriver;
-		trackedPoseDriver = hologlaCameraParent.GetComponent<HologlaCameraManager>( ).gameObject.AddComponent<TrackedPoseDriver>( );
-		trackedPoseDriver.SetPoseSource(TrackedPoseDriver.DeviceType.GenericXRDevice, TrackedPoseDriver.TrackedPose.ColorCamera);
-#endif
-
-		//HologlaCameraManagerのArBackgroundMaterialにARBackgroundを設定
-		Material arBackgroundMaterial = LoadAssetAtPath<Material>(HOLOGLA_AR_CORE_AR_MATERIAL_PATH);
-		HologlaCameraManager hologlaCameraManager = hologlaCameraParent.GetComponent<HologlaCameraManager>( );
-		hologlaCameraManager.arBackgroundMaterial = arBackgroundMaterial;
-
-		ApplyHologlaInputSetting(hologlaCameraManager, hologlaInput.GetComponent<HologlaInput>( ));
-
-		return;
-	}
-
 
 	//HologlaInputに初期の関連づけを行う.
 	static void ApplyHologlaInputSetting(HologlaCameraManager hologlaCameraManager, HologlaInput hologlaInput)
