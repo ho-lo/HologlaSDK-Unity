@@ -12,6 +12,7 @@ using UnityEngine.UI;
 #endif
 using static UnityEditor.AssetDatabase;
 using static UnityEditor.PrefabUtility;
+using System.Linq;
 
 public class SceneInitializeMenu
 {
@@ -24,12 +25,27 @@ public class SceneInitializeMenu
 	[MenuItem("Hologla/Initialize Project")]
 	static void InitProject()
 	{
-#if UNITY_2017_1_OR_NEWER
 		//カメラを使用するための表記が設定されていない場合は適当に設定.
 		if( 0 == PlayerSettings.iOS.cameraUsageDescription.Length ){
 			PlayerSettings.iOS.cameraUsageDescription = AR_KIT_CAMERA_USAGE_DESCRIPTION;
 		}
-#endif
+		//AndroidのMinSDKVersionが低い場合はARCore向けに対応しているバージョンにする.
+		if( AndroidSdkVersions.AndroidApiLevel24 > PlayerSettings.Android.minSdkVersion ){
+			PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
+		}
+		//ARCore向けにVulkenを使用しないようにする.
+		if( true == PlayerSettings.GetGraphicsAPIs(BuildTarget.Android).Contains(UnityEngine.Rendering.GraphicsDeviceType.Vulkan) ) {
+			UnityEngine.Rendering.GraphicsDeviceType[] graphicsDeviceTypeArray = new UnityEngine.Rendering.GraphicsDeviceType[1] { UnityEngine.Rendering.GraphicsDeviceType.OpenGLES3 };
+			PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, graphicsDeviceTypeArray);
+		}
+		//ARM64向けにビルドさせるためにScriptBackendをIL2CPPにする.
+		if( ScriptingImplementation.IL2CPP != PlayerSettings.GetScriptingBackend(BuildTargetGroup.Android) ) {
+			PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
+		}
+		//ARM64向けにビルドさせる設定にする.
+		if( 0 == (PlayerSettings.Android.targetArchitectures & AndroidArchitecture.ARM64) ){
+			PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
+		}
 
 		return;
 	}
