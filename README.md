@@ -5,20 +5,20 @@ MITライセンスになります。
 Assets/Hologla/Lisence.txtをご確認ください。
 
 ## AR機能の動作環境について
-Unity2019.x以降のバージョンを想定しています。  
-基本的にARKit、またはARCoreを利用してiOS、Android端末にて動作させることを想定しているため、
-ARFoundation及びARKit、ARCore等のプラグインを使用します(PackageManager設定にて設定しています)。
-現在動作確認しているバージョンは4.1.5です。
+Unity2019.x以降のバージョンを想定しています。 <br>
+基本的にARKit、またはARCoreを利用してiOS、Android端末にて動作させることを想定しているため、 <br>
+ARFoundation及びARKit、ARCore等のプラグインを使用します(PackageManager設定にて設定しています)。 <br>
+現在動作確認しているバージョンは4.1.5です。 <br>
 
 また、動作確認には対応している端末が必要です。
 #### iOS
-iPhone SE、iPhone 6s以降の端末
-対応端末一覧は以下ページの下部参照
+iPhone SE、iPhone 6s以降の端末 <br>
+対応端末一覧は以下ページの下部参照 <br>
 https://www.apple.com/jp/augmented-reality/
 
 #### Android
-Android 7.0以降の対応端末
-対応端末一覧は以下ページの下部参照
+Android 7.0以降の対応端末 <br>
+対応端末一覧は以下ページの下部参照 <br>
 https://developers.google.com/ar/devices
 
 ## 導入手順について
