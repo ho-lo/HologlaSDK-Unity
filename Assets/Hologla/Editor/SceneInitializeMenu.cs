@@ -25,10 +25,23 @@ public class SceneInitializeMenu
 	[MenuItem("Hologla/Initialize Project")]
 	static void InitProject()
 	{
+		//====================iOS用====================.
 		//カメラを使用するための表記が設定されていない場合は適当に設定.
 		if( 0 == PlayerSettings.iOS.cameraUsageDescription.Length ){
 			PlayerSettings.iOS.cameraUsageDescription = AR_KIT_CAMERA_USAGE_DESCRIPTION;
 		}
+		//iOSの最小ターゲットバージョンをARKit用に設定する.
+		float iosVersion = float.Parse(PlayerSettings.iOS.targetOSVersionString);
+		if( 11.0f > iosVersion ){
+			PlayerSettings.iOS.targetOSVersionString = "11.0";
+		}
+		//iOSを64bitに設定.
+		//0 - None, 1 - ARM64, 2 - Universal..
+		if( 1 != PlayerSettings.GetArchitecture(BuildTargetGroup.iOS) ){
+			PlayerSettings.SetArchitecture(BuildTargetGroup.iOS, 1);
+		}
+
+		//====================Android用====================.
 		//AndroidのMinSDKVersionが低い場合はARCore向けに対応しているバージョンにする.
 		if( AndroidSdkVersions.AndroidApiLevel24 > PlayerSettings.Android.minSdkVersion ){
 			PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
