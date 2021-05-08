@@ -88,6 +88,12 @@ public class SceneInitializeMenu
 
 		ApplyHologlaInputSetting(hologlaCameraManager, hologlaInput.GetComponent<HologlaInput>( ));
 
+		//AR機能利用用にARSession用コンポーネントの有無を確認し、ない場合は生成する.
+		if( 0 == GameObject.FindObjectsOfType<UnityEngine.XR.ARFoundation.ARSession>().Length ){
+			//ARSession用オブジェクトを生成する(4.1.5現在、メニューから追加できるGameObjectのARSessionと同じもの).
+			ObjectFactory.CreateGameObject("AR Session", typeof(UnityEngine.XR.ARFoundation.ARSession), typeof(UnityEngine.XR.ARFoundation.ARInputManager));
+		}
+
 		return;
 	}
 
