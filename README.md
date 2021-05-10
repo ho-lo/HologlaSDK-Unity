@@ -22,11 +22,18 @@ Android 7.0以降の対応端末 <br>
 https://developers.google.com/ar/devices
 
 ## 導入手順について
-Unityプロジェクトを開く、または既存のプロジェクトにunitypackageをインポートします。
+1. Unityプロジェクトを作成、または既存のプロジェクトを開いた後にPackageManagerよりAR Foundationをインストールします。 <br>
+その後、必要に応じて、ARKit XR Plugin、ARCore XR Pluginをそれぞれインストールします。 <br>
+(iOSのみであれば、ARKit XR Pluginのみ、Androidのみであれば、ARCore XR Pluginのみのインストールで問題ありません。) <br>
 
-Unityの上部メニューの[Hologla]から[Initialize Project]と[Initialize Scene]を順番に選択し、実行します。
+2. PackageManagerでの設定完了後、本SDKのunitypackageをインポートします。 <br>
 
-以上の設定で画面表示、入力関連のセットアップは完了となります。
+3. Unityの上部メニューの[Hologla]から[Initialize Project]と選択し、実行します。 <br>
+ここまででプロジェクトの設定は完了です。 <br>
+
+4. 作業をするシーンを作成、または開いたら、 Unityの上部メニューの[Hologla]から[Initialize Scene]を選択、実行してシーン用の設定を実行します。 <br>
+
+以上の設定でプロジェクトの共通設定と、シーン内の画面表示、入力関連のセットアップは完了となります。 <br>
 
 ## 各種Prefabについて
 - HologlaCameraParent
