@@ -26,12 +26,16 @@ https://developers.google.com/ar/devices
 その後、必要に応じて、ARKit XR Plugin、ARCore XR Pluginをそれぞれインストールします。 <br>
 (iOSのみであれば、ARKit XR Pluginのみ、Androidのみであれば、ARCore XR Pluginのみのインストールで問題ありません。) <br>
 
-2. PackageManagerでの設定完了後、本SDKのunitypackageをインポートします。 <br>
+2. UnityのProject SettingsからXR Plug-in Managementの項目を開きます。 <br>
+必要に応じて、iOSのタブのARKitのチェックボックス、AndroidのタブのARCoreのチェックボックスにチェックを入れます。 <br>
+(iOS、Andoridのどちらか片方しか利用しない場合は、利用する方のみチェックを入れる形でも問題ありません。) <br>
 
-3. Unityの上部メニューの[Hologla]から[Initialize Project]と選択し、実行します。 <br>
+3. PackageManagerでの設定完了後、本SDKのunitypackageをインポートします。 <br>
+
+4. Unityの上部メニューの[Hologla]から[Initialize Project]と選択し、実行します。 <br>
 ここまででプロジェクトの設定は完了です。 <br>
 
-4. 作業をするシーンを作成、または開いたら、 Unityの上部メニューの[Hologla]から[Initialize Scene]を選択、実行してシーン用の設定を実行します。 <br>
+5. 作業をするシーンを作成、または開いたら、 Unityの上部メニューの[Hologla]から[Initialize Scene]を選択、実行してシーン用の設定を実行します。 <br>
 
 以上の設定でプロジェクトの共通設定と、シーン内の画面表示、入力関連のセットアップは完了となります。 <br>
 
