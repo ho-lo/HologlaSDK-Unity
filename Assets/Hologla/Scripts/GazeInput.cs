@@ -12,7 +12,7 @@ namespace Hologla{
 //		[Tooltip("")]
 		[SerializeField]private float defaultCursorDistance = 2.0f ;
 
-		private IGazeInteract currentSelectObject = null ;
+		public IGazeInteract currentSelectObject{ get; private set; } = null;
 
 		// Use this for initialization
 		void Start( )
@@ -83,6 +83,11 @@ namespace Hologla{
 			return;
 		}
 
+
+		public bool IsSelectObject( )
+		{
+			return (null != currentSelectObject);
+		}
 
 	}
 }
