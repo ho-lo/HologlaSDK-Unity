@@ -30,19 +30,22 @@ namespace Hologla{
 		//【iPhone XR】142,67.
 		//【iPhone 6S-8Plus】121,68.
 		//【iPhone XS Max】149,69.
+		//【iPhone 12Pro Max】155,72.
 		public static readonly ReadOnlyCollection<Vector2> viewportSizeList = new ReadOnlyCollection<Vector2>(new Vector2[]
 #if UNITY_ANDROID
 			{new Vector2(0.5f * 1.0f, 1.0f * 1.0f),
 			new Vector2(0.5f * 0.945945946f, 1.0f * 0.936507937f),
 			new Vector2(0.5f * 0.8203125f, 1.0f * 0.951612903f),
 			new Vector2(0.5f * 0.833333333f, 1.0f * 0.819444444f),
-			new Vector2(0.5f * 0.734265734f, 1.0f * 0.855072464f),});
+			new Vector2(0.5f * 0.734265734f, 1.0f * 0.855072464f),
+			new Vector2(0.5f * 0.677419355f, 1.0f * 0.819444444f),});
 #else
 			{new Vector2(0.5f * 1.0f, 1.0f * 1.0f),
 			new Vector2(0.5f * 0.777777778f, 1.0f * 0.951612903f),
 			new Vector2(0.5f * 0.73943662f, 1.0f * 0.880597015f),
 			new Vector2(0.5f * 0.867768595f, 1.0f * 0.867647059f),
-			new Vector2(0.5f * 0.704697987f, 1.0f * 0.855072464f),});
+			new Vector2(0.5f * 0.704697987f, 1.0f * 0.855072464f),
+			new Vector2(0.5f * 0.677419355f, 1.0f * 0.819444444f),});
 #endif
 
 		private const string SETTING_KEY_DATA_VERSION = "Hologla_DataVersion" ;
