@@ -214,6 +214,7 @@ public class DanglaMenuSample : MonoBehaviour {
 	public void SwitchViewSize3( ){if( null != hologlaManager ){hologlaManager.SwitchViewSize(HologlaCameraManager.ViewSize.Size3);}}
 	public void SwitchViewSize4( ){if( null != hologlaManager ){hologlaManager.SwitchViewSize(HologlaCameraManager.ViewSize.Size4);}}
 	public void SwitchViewSize5( ){if( null != hologlaManager ){hologlaManager.SwitchViewSize(HologlaCameraManager.ViewSize.Size5);}}
+	public void SwitchViewSize6( ){if( null != hologlaManager ){hologlaManager.SwitchViewSize(HologlaCameraManager.ViewSize.Size6);}}
 	#endregion
 	//瞳孔間距離の設定.
 	public void AddIPD(float addValue){if( null != hologlaManager ){hologlaManager.AddIPD(addValue);}}
