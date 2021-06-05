@@ -26,6 +26,7 @@ namespace Hologla{
 			Size3,
 			Size4,
 			Size5,
+			Size6,
 		};
 
 		//表示モード(AR/MR/VR).
@@ -296,6 +297,7 @@ namespace Hologla{
 		public void SwitchViewSize3( ){SwitchViewSize(ViewSize.Size3);}
 		public void SwitchViewSize4( ){SwitchViewSize(ViewSize.Size4);}
 		public void SwitchViewSize5( ){SwitchViewSize(ViewSize.Size5);}
+		public void SwitchViewSize6( ){SwitchViewSize(ViewSize.Size6);}
 		#endregion
 
 		//VR時に背景として扱うオブジェクトを追加する.
