@@ -884,6 +884,10 @@ MonoBehaviour:
   gazeObject: {fileID: 1722241947097298}
   cursorObject: {fileID: 1983979069957584}
   defaultCursorDistance: 2
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  targetMaxDistance: 10
 --- !u!20 &20803719635922316
 Camera:
   m_ObjectHideFlags: 0
