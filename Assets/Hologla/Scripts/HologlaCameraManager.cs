@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+#if UNITY_IOS
+using UnityEngine.XR.iOS;
+#endif
 
 namespace Hologla{
 	public class HologlaCameraManager : MonoBehaviour {
@@ -102,6 +105,10 @@ namespace Hologla{
 		private HologlaARKitVideo rightArCameraBackground = null ;
 #endif
 
+#if UNITY_IOS
+		[SerializeField]private bool isResetSession = false;
+#endif
+
 		// Use this for initialization
 		void Start( )
 		{
@@ -122,6 +129,12 @@ namespace Hologla{
 
 		private void Awake( )
 		{
+#if UNITY_IOS
+			if( true == isResetSession ){
+				UnityARSessionNativeInterface arSession = UnityARSessionNativeInterface.GetARSessionNativeInterface( );
+				arSession.RunWithConfigAndOptions(new ARKitSessionConfiguration( ), UnityARSessionRunOption.ARSessionRunOptionResetTracking);
+			}
+#endif
 			//デフォルトで自動スリープを無効化しておく.
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
