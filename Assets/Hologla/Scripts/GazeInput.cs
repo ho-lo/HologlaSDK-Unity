@@ -12,6 +12,10 @@ namespace Hologla{
 //		[Tooltip("")]
 		[SerializeField]private float defaultCursorDistance = 2.0f ;
 
+		// カーソルが衝突するレイヤーマスク.
+		[SerializeField]private LayerMask targetLayerMask = (int)0x7FFFFFFF;
+		[SerializeField]private float targetMaxDistance = 10.0f;
+
 		public IGazeInteract currentSelectObject{ get; private set; } = null;
 
 		// Use this for initialization
@@ -31,7 +35,7 @@ namespace Hologla{
 			Vector3 cursorPos ;
 
 			cursorPos = gazeObject.transform.position + (gazeObject.transform.forward * defaultCursorDistance);
-			if( true == Physics.Raycast(gazeObject.transform.position, gazeObject.transform.forward, out raycastHit) ){
+			if( true == Physics.Raycast(gazeObject.transform.position, gazeObject.transform.forward, out raycastHit, targetMaxDistance, targetLayerMask) ){
 				IGazeInteract gazeInteract ;
 
 				gazeInteract = raycastHit.collider.GetComponent<IGazeInteract>( );
@@ -82,7 +86,6 @@ namespace Hologla{
 
 			return;
 		}
-
 
 		public bool IsSelectObject( )
 		{
