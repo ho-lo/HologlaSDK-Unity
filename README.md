@@ -69,3 +69,7 @@ HologlaInputオブジェクトのOnPressLeftAndRightに左右のボタンを同�
 LeftButtonオブジェクトのOnClickに左ボタンをクリックした際のイベント、  
 RightButtonオブジェクトのOnClickに右ボタンをクリックした際のイベント  
 をそれぞれ設定することができるようになっています。
+
+## ハンズオン用資料
+https://docs.google.com/presentation/d/e/2PACX-1vQFCwxnd4akv10a2nxZxjaFumjAWRBxp0yZCywk6EEduSmpu5QViMlhMjvkS5lG3_lnbkrBArx7U6hl/pub?slide=id.p
+
