@@ -169,6 +169,12 @@ namespace Hologla
 			ApplyIPD(interpupillaryDistance);
 			SwitchViewSize(currentViewSize);
 
+#if UNITY_EDITOR
+			if( null != transform.parent.gameObject && null == transform.parent.gameObject.GetComponent<EditorCameraController>( ) ){
+				transform.parent.gameObject.AddComponent<EditorCameraController>( );
+			}
+#endif
+
 			return;
 		}
 
