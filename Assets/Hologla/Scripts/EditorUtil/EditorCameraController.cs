@@ -104,5 +104,6 @@ public class EditorCameraController : MonoBehaviour
 		return;
 	}
 
+// #if UNITY_EDITOR.
 #endif
 }
