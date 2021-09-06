@@ -1,5 +1,9 @@
 # HologlaSDK-Unity
 
+## 概要
+主に[だんグラ](https://ho-lo.jp/products/hardware/dangla/)、[だんグラKids](https://ho-lo.jp/products/hardware/kids/)、[ホログラス デュオ](https://ho-lo.jp/products/hardware/hologlass2/)向けにAR/MR/VR用のアプリケーションをそれぞれ作るためのSDKです。 <br>
+UnityでのAndroid/iOS開発に利用できるため、[だんグラ](https://ho-lo.jp/products/hardware/dangla/)等を使用しない場合でも、スマートフォン向けにAR/MR/VR用コンテンツを作成する際に使用することもできます。 <br>
+
 ## ライセンスについて
 MITライセンスになります。
 Assets/Hologla/Lisence.txtをご確認ください。
