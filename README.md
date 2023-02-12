@@ -12,7 +12,7 @@ Assets/Hologla/Lisence.txtをご確認ください。
 Unity2019.x以降のバージョンを想定しています。 <br>
 基本的にARKit、またはARCoreを利用してiOS、Android端末にて動作させることを想定しているため、 <br>
 ARFoundation及びARKit、ARCore等のプラグインを使用します(PackageManager設定にて設定しています)。 <br>
-現在動作確認しているバージョンは4.1.5です。 <br>
+現在動作確認している最新バージョンは4.2.7です。 <br>
 
 また、動作確認には対応している端末が必要です。
 #### iOS
@@ -42,6 +42,9 @@ https://developers.google.com/ar/devices
 5. 作業をするシーンを作成、または開いたら、 Unityの上部メニューの[Hologla]から[Initialize Scene]を選択、実行してシーン用の設定を実行します。 <br>
 
 以上の設定でプロジェクトの共通設定と、シーン内の画面表示、入力関連のセットアップは完了となります。 <br>
+
+※Player SettingsのOther SettingsのAuto Graphics APIにチェックが入っている場合は外す必要があります。<br>
+(現在ARCoreではVulkanが利用できないため、明示的に利用しない設定にする必要があります。)<br>
 
 ## 各種Prefabについて
 - HologlaCameraParent
@@ -83,22 +86,10 @@ iPhoneでの画面サイズ設定は以下の対応表の通りとなってい�
 
 | アプリ側の画面サイズ設定 | 端末の画面サイズ | iPhoneのバージョン |
 | ----- | ----- | ----- |
-| サイズ1 | 4.7インチ | iPhone 6s |
-| サイズ1 | 4.7インチ | iPhone 7 |
-| サイズ1 | 4.7インチ | iPhone 8 |
-| サイズ1 | 4.7インチ | iPhone SE 2 |
-| サイズ2 | 5.4インチ、5.5インチ | iPhone 12 mini |
-| サイズ2 | 5.4インチ、5.5インチ | iPhone 6s Plus |
-| サイズ2 | 5.4インチ、5.5インチ | iPhone 7 Plus |
-| サイズ2 | 5.4インチ、5.5インチ | iPhone 8 Plus |
-| サイズ3 | 5.8インチ | iPhone X |
-| サイズ3 | 5.8インチ | iPhone XS |
-| サイズ3 | 5.8インチ | iPhone 11 Pro |
-| サイズ4 | 6.1インチ | iPhone XR |
-| サイズ4 | 6.1インチ | iPhone 11 |
-| サイズ4 | 6.1インチ | iPhone 12 |
-| サイズ4 | 6.1インチ | iPhone 12 Pro |
-| サイズ5 | 6.5インチ | iPhone XS Max |
-| サイズ5 | 6.5インチ | iPhone 11 Pro Max |
-| サイズ6 | 6.7インチ | iPhone 12 Pro Max |
+| サイズ1 | 4.7インチ | iPhone 6s<br>iPhone 7<br>iPhone 8<br>iPhone SE 2<br>iPhone SE 3 |
+| サイズ2 | 5.4インチ、5.5インチ | iPhone 12 mini<br>iPhone 6s Plus<br>iPhone 7 Plus<br>iPhone 8 Plus |
+| サイズ3 | 5.8インチ | iPhone X<br>iPhone XS<br>iPhone 11 Pro |
+| サイズ4 | 6.1インチ | iPhone XR<br>iPhone 11<br>iPhone 12<br>iPhone 12 Pro<br>iPhone 13<br>iPhone 13 Pro<br>iPhone 14<br>iPhone 14 Pro |
+| サイズ5 | 6.5インチ | iPhone XS Max<br>iPhone 11 Pro Max |
+| サイズ6 | 6.7インチ | iPhone 12 Pro Max<br>iPhone 13 Pro Max<br>iPhone 14 Plus<br>iPhone 14 Pro Max |
 
