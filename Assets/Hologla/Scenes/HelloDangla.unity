@@ -281,7 +281,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onKeepSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 518565227}
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 0cc23cbe4f075984481c2b68ced7d0be,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   selectFrame: {fileID: 0}
+  isCallKeepSelectEvent: 1
+  keepSelectEventIntervalSec: 1
 --- !u!1 &559168737
 GameObject:
   m_ObjectHideFlags: 0
