@@ -15,6 +15,9 @@ public class EditorCameraController : MonoBehaviour
 	// 1秒あたりに回転する角度.
 	[SerializeField]private float rotationAnglePerSec = 30.0f;
 
+	// カメラ回転時に回転の向きを常にワールドの方向に対して行うようにするフラグ.
+	[SerializeField]private bool isRotationWorld = true;
+
 	private Vector3 initialPosition = Vector3.zero;
 	private Quaternion initialRotation = Quaternion.identity;
 
@@ -79,16 +82,36 @@ public class EditorCameraController : MonoBehaviour
 
 		rotationAngle = rotationAnglePerSec * Time.deltaTime;
 		if( Input.GetKey(KeyCode.UpArrow) ){
-			targetCameraObject.transform.rotation *= Quaternion.AngleAxis(rotationAngle * -1.0f, targetCameraObject.transform.right);
+			if( isRotationWorld == false ){
+				targetCameraObject.transform.rotation *= Quaternion.AngleAxis(rotationAngle * -1.0f, targetCameraObject.transform.right);
+			}
+			else{
+				targetCameraObject.transform.eulerAngles += Quaternion.AngleAxis(rotationAngle * -1.0f, Vector3.right).eulerAngles;
+			}
 		}
 		if( Input.GetKey(KeyCode.DownArrow) ){
-			targetCameraObject.transform.rotation *= Quaternion.AngleAxis(rotationAngle, targetCameraObject.transform.right);
+			if( isRotationWorld == false ){
+				targetCameraObject.transform.rotation *= Quaternion.AngleAxis(rotationAngle, targetCameraObject.transform.right);
+			}
+			else{
+				targetCameraObject.transform.eulerAngles += Quaternion.AngleAxis(rotationAngle, Vector3.right).eulerAngles;
+			}
 		}
 		if( Input.GetKey(KeyCode.LeftArrow) ){
-			targetCameraObject.transform.rotation *= Quaternion.AngleAxis(rotationAngle * -1.0f, targetCameraObject.transform.up);
+			if( isRotationWorld == false ){
+				targetCameraObject.transform.rotation *= Quaternion.AngleAxis(rotationAngle * -1.0f, targetCameraObject.transform.up);
+			}
+			else{
+				targetCameraObject.transform.eulerAngles += Quaternion.AngleAxis(rotationAngle * -1.0f, Vector3.up).eulerAngles;
+			}
 		}
 		if( Input.GetKey(KeyCode.RightArrow) ){
-			targetCameraObject.transform.rotation *= Quaternion.AngleAxis(rotationAngle, targetCameraObject.transform.up);
+			if( isRotationWorld == false ){
+				targetCameraObject.transform.rotation *= Quaternion.AngleAxis(rotationAngle, targetCameraObject.transform.up);
+			}
+			else{
+				targetCameraObject.transform.eulerAngles += Quaternion.AngleAxis(rotationAngle, Vector3.up).eulerAngles;
+			}
 		}
 
 		return;
