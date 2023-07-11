@@ -136,6 +136,9 @@ namespace Hologla{
 
 		private void EndKeepSelectEventMonitor( )
 		{
+			if( null == keepSelectEventCallMonitor ){
+				return;
+			}
 			StopCoroutine(keepSelectEventCallMonitor);
 			keepSelectEventCallMonitor = null;
 
