@@ -105,6 +105,11 @@ namespace Hologla
 		private HologlaARKitVideo rightArCameraBackground = null ;
 #endif
 
+		// ARモード時に自動的にARオクルージョンを有効にするかどうか.
+		[SerializeField]private bool isValidArOcclusion = false;
+
+		[SerializeField]private List<AROcclusionManager> arOcclusionManagerList = new List<AROcclusionManager>( );
+
 		// Use this for initialization
 		void Start( )
 		{
@@ -113,6 +118,8 @@ namespace Hologla
 			SwitchEyeMode(currentEyeMode);
 			ApplyIPD(interpupillaryDistance);
 			SwitchViewSize(currentViewSize);
+
+			UpdateArOcclution( );
 
 			return;
 		}
@@ -174,6 +181,7 @@ namespace Hologla
 				transform.parent.gameObject.AddComponent<EditorCameraController>( );
 			}
 #endif
+			UpdateArOcclution( );
 
 			return;
 		}
@@ -218,6 +226,8 @@ namespace Hologla
 
 			prevViewMode = currentViewMode;
 			currentViewMode = viewMode;
+			// ViewModeが切り替わった場合はARオクルージョンの常態も更新しておく.
+			UpdateArOcclution( );
 
 			return;
 		}
@@ -417,6 +427,47 @@ namespace Hologla
 			return;
 		}
 
+		// ARモード中にARオクルージョンを有効にするかどうかを切り替える.
+		public void SwitchArOcclusion(bool isValid)
+		{
+			isValidArOcclusion = isValid;
+			UpdateArOcclution( );
+
+			return;
+		}
+
+		private void UpdateArOcclution( )
+		{
+			// ARオクルージョン用のコンポーネントが設定されておらず、ARオクルージョンを有効にしたい場合はコンポーネントを取得してくる.
+			if( 0 >= arOcclusionManagerList.Count ){
+				foreach( ARCameraBackground arCameraBackground in arCameraBackgroundArray ){
+					if( null != arCameraBackground ){
+						AROcclusionManager arOcclusionManager = arCameraBackground.gameObject.GetComponent<AROcclusionManager>( );
+						if( null != arOcclusionManager ){
+							arOcclusionManagerList.Add(arOcclusionManager);
+						}
+					}
+				}
+			}
+
+			// ARオクルージョンの有効無効設定と、ARモード中かどうかを見て、ARオクルージョンの有効状態を切り替える.
+			if( false == isValidArOcclusion || ViewMode.AR != currentViewMode ){
+				foreach( AROcclusionManager arOcclusionManager in arOcclusionManagerList ){
+					if( null != arOcclusionManager && true == arOcclusionManager.enabled ){
+						arOcclusionManager.enabled = false;
+					}
+				}
+			}
+			else{
+				foreach( AROcclusionManager arOcclusionManager in arOcclusionManagerList ){
+					if( null != arOcclusionManager && false == arOcclusionManager.enabled ){
+						arOcclusionManager.enabled = true;
+					}
+				}
+			}
+
+			return;
+		}
 
 		//====================シーン制御/prefab制御用====================.
 		public void AddScene(string sceneName)

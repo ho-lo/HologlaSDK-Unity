@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 124679939672962070}
   - component: {fileID: 6070881337572262244}
   - component: {fileID: 3181202849932262507}
+  - component: {fileID: 5546461705961973169}
   m_Layer: 0
   m_Name: RightEyeCamera
   m_TagString: Untagged
@@ -260,6 +261,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
+--- !u!114 &5546461705961973169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262816909133426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15f82cc229284894964d2d30806969d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HumanSegmentationStencilMode: 3
+  m_HumanSegmentationDepthMode: 2
+  m_EnvironmentDepthMode: 3
+  m_OcclusionPreferenceMode: 0
 --- !u!1 &1309237857888214
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +629,7 @@ GameObject:
   - component: {fileID: 124947105000522584}
   - component: {fileID: 3589589280983164127}
   - component: {fileID: 2263723552912723297}
+  - component: {fileID: 2999380388026128095}
   m_Layer: 0
   m_Name: LeftEyeCamera
   m_TagString: Untagged
@@ -715,6 +733,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
+--- !u!114 &2999380388026128095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479113064467602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15f82cc229284894964d2d30806969d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HumanSegmentationStencilMode: 3
+  m_HumanSegmentationDepthMode: 2
+  m_EnvironmentDepthMode: 3
+  m_OcclusionPreferenceMode: 0
 --- !u!1 &1503294291319248
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +763,7 @@ GameObject:
   - component: {fileID: 81212771572420408}
   - component: {fileID: 3193531512699649618}
   - component: {fileID: 5174060712169212542}
+  - component: {fileID: 4975842283532750092}
   m_Layer: 0
   m_Name: SingleEyeCamera
   m_TagString: Untagged
@@ -840,6 +875,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
+--- !u!114 &4975842283532750092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503294291319248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15f82cc229284894964d2d30806969d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HumanSegmentationStencilMode: 3
+  m_HumanSegmentationDepthMode: 2
+  m_EnvironmentDepthMode: 3
+  m_OcclusionPreferenceMode: 0
 --- !u!1 &1543416351507992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1068,8 @@ MonoBehaviour:
   - {fileID: 5174060712169212542}
   - {fileID: 2263723552912723297}
   - {fileID: 3181202849932262507}
+  isValidArOcclusion: 0
+  arOcclusionManagerList: []
 --- !u!114 &114103395556202336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,6 +1085,10 @@ MonoBehaviour:
   gazeObject: {fileID: 1722241947097298}
   cursorObject: {fileID: 1983979069957584}
   defaultCursorDistance: 2
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetMaxDistance: 10
 --- !u!20 &20803719635922316
 Camera:
   m_ObjectHideFlags: 0
