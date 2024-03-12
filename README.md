@@ -89,7 +89,7 @@ iPhoneでの画面サイズ設定は以下の対応表の通りとなってい�
 | サイズ1 | 4.7インチ | iPhone 6s<br>iPhone 7<br>iPhone 8<br>iPhone SE 2<br>iPhone SE 3 |
 | サイズ2 | 5.4インチ、5.5インチ | iPhone 12 mini<br>iPhone 6s Plus<br>iPhone 7 Plus<br>iPhone 8 Plus |
 | サイズ3 | 5.8インチ | iPhone X<br>iPhone XS<br>iPhone 11 Pro |
-| サイズ4 | 6.1インチ | iPhone XR<br>iPhone 11<br>iPhone 12<br>iPhone 12 Pro<br>iPhone 13<br>iPhone 13 Pro<br>iPhone 14<br>iPhone 14 Pro |
+| サイズ4 | 6.1インチ | iPhone XR<br>iPhone 11<br>iPhone 12<br>iPhone 12 Pro<br>iPhone 13<br>iPhone 13 Pro<br>iPhone 14<br>iPhone 14 Pro<br>iPhone 15<br>iPhone 15 Pro |
 | サイズ5 | 6.5インチ | iPhone XS Max<br>iPhone 11 Pro Max |
-| サイズ6 | 6.7インチ | iPhone 12 Pro Max<br>iPhone 13 Pro Max<br>iPhone 14 Plus<br>iPhone 14 Pro Max |
+| サイズ6 | 6.7インチ | iPhone 12 Pro Max<br>iPhone 13 Pro Max<br>iPhone 14 Plus<br>iPhone 14 Pro Max<br>iPhone 15 Plus<br>iPhone 15 Pro Max |
 
