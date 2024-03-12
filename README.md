@@ -77,6 +77,20 @@ LeftButtonオブジェクトのOnClickに左ボタンをクリックした際の
 RightButtonオブジェクトのOnClickに右ボタンをクリックした際のイベント  
 をそれぞれ設定することができるようになっています。
 
+## 主なコンポーネントの役割について
+- HologlaCameraManager<br>
+  カメラに関する設定/制御を統括、管理する
+- GazeInput<br>
+  視線(頭の向き)と距離に対応したカーソル位置の制御と衝突判定を行う
+- HologlaInput<br>
+  左右のボタンによる入力の管理を行う
+- EditorInputController<br>
+  エディタ上での確認用にキー入力によって、左右ボタンの入力を疑似的に呼び出す機能を持つ
+- GazeInteractive<br>
+  視線(頭の向き)に応じたカーソルを経由した入力を受け付け、イベント呼び出しを行う
+- LaunchScene<br>
+  設定によってコンテンツ本編のシーンとメニュー用のシーン、どちらにシーン遷移するかを判別し、遷移を行う
+
 ## ハンズオン用資料
 https://docs.google.com/presentation/d/e/2PACX-1vQFCwxnd4akv10a2nxZxjaFumjAWRBxp0yZCywk6EEduSmpu5QViMlhMjvkS5lG3_lnbkrBArx7U6hl/pub?slide=id.p
 
